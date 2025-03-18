@@ -2,6 +2,8 @@
 
 Command line tool wrapping the various `sfomuseum/go-{SOME_GEO_FORMAT}-show` tools.
 
+_This basically "just works" but if you're reading this that means things are still in flux._
+
 ## Motivation
 
 This package exports a single command-line tool called `show` which wraps a variety of standalone tools for displaying different geo formats in a web browser.
