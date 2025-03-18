@@ -1,0 +1,4 @@
+go.work*
+bin
+*~
+libduckdb.a
