@@ -4,8 +4,7 @@ go 1.24.0
 
 require (
 	github.com/aaronland/go-roster v1.0.0
-	github.com/sfomuseum/go-flags v0.10.0
-	github.com/sfomuseum/go-geojson-show v0.0.11
+	github.com/sfomuseum/go-geojson-show v0.0.12
 	github.com/sfomuseum/go-geoparquet-show v0.0.4
 	github.com/sfomuseum/go-mbtiles-show v0.0.5
 	github.com/sfomuseum/go-pmtiles-show v0.0.1
@@ -33,6 +32,7 @@ require (
 	github.com/paulmach/protoscan v0.2.1 // indirect
 	github.com/pierrec/lz4/v4 v4.1.21 // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
+	github.com/sfomuseum/go-flags v0.10.0 // indirect
 	github.com/sfomuseum/go-http-mvt v0.0.2 // indirect
 	github.com/sfomuseum/go-http-protomaps v0.3.0 // indirect
 	github.com/sfomuseum/go-http-rollup v0.0.3 // indirect
@@ -50,9 +50,9 @@ require (
 	go.mongodb.org/mongo-driver v1.11.4 // indirect
 	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
 	golang.org/x/mod v0.18.0 // indirect
-	golang.org/x/net v0.33.0 // indirect
+	golang.org/x/net v0.36.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 )
