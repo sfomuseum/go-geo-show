@@ -47,7 +47,7 @@ Valid commands are:
 $> ./bin/show geojson -h
 Command-line tool for serving GeoJSON features from an on-demand web server.
 Usage:
-	 ./bin/show path(N) path(N)
+	 ./bin/show geojson path(N) path(N)
 Valid options are:
   -browser-uri string
     	A valid sfomuseum/go-www-show/v2.Browser URI. Valid options are: web:// (default "web://")
@@ -69,13 +69,27 @@ Valid options are:
 If the only path as input is "-" then data will be read from STDIN.
 ```
 
+##### Example
+
+![](docs/images/go-geojson-show-custom.png)
+
+```
+$> ./bin/show geojson \
+	/usr/local/data/sfomuseum-data-architecture/data/102/527/513/102527513.geojson \
+	/usr/local/data/oak.geojson
+	
+2024/08/13 13:08:44 Features are viewable at http://localhost:54501
+```
+
+See [`sfomuseum/go-geojson-show` for detailed examples](https://github.com/sfomuseum/go-geojson-show?tab=readme-ov-file#examples).
+
 #### geoparquet
 
 ```
 $> ./bin/show geoparquet -h
 Command-line tool for serving GeoParquet features as vector tiles from an on-demand web server.
 Usage:
-	 ./bin/show [options]
+	 ./bin/show geoparquet [options]
 Valid options are:
   -browser-uri string
     	A valid sfomuseum/go-www-show/v2.Browser URI. Valid options are: web:// (default "web://")
@@ -97,13 +111,29 @@ Valid options are:
     	Enable vebose (debug) logging.
 ```
 
+##### Example
+
+![](docs/images/go-geoparquet-show-maplibre-sfo-arch.png)
+
+```
+$> ./bin/show geoparquet \
+	-data-source /usr/local/data/arch.geoparquet \
+	-label wof:id \
+	-label wof:name \
+	-renderer maplibre
+	
+2024/08/21 13:40:52 INFO Server is ready and features are viewable url=http://localhost:60581
+```
+
+See [`sfomuseum/go-geoparquet-show` for detailed examples](https://github.com/sfomuseum/go-geoparquet-show?tab=readme-ov-file#examples).
+
 #### mbtiles
 
 ```
-> ./bin/show mbtiles -h
+$> ./bin/show mbtiles -h
 Command-line tool for serving MBTiles tiles from an on-demand web server.
 Usage:
-	 ./bin/show [options]
+	 ./bin/show mbtiles [options]
 Valid options are:
   -base-tile-uri string
     	A valid raster tile layer or pmtiles:// URI. (default "https://tile.openstreetmap.org/{z}/{x}/{y}.png")
@@ -123,13 +153,40 @@ Valid options are:
     	Enable verbose (debug) logging.
 ```
 
+##### Example
+
+![](docs/images/go-mbtiles-show-2023-24.png)
+
+```
+$> ./bin/show geojson \
+	-map-provider leaflet \
+	-raster 2023=/usr/local/sfomuseum/tiles/sqlite/2023.db \
+	-raster 2024=/usr/local/sfomuseum/tiles/sqlite/2024.db \
+	-verbose
+	
+2024/08/30 18:16:14 DEBUG Verbose logging enabled
+2024/08/30 18:16:14 DEBUG Start server
+2024/08/30 18:16:14 DEBUG HEAD request succeeded url=http://localhost:64211
+2024/08/30 18:16:14 INFO Server is ready and features are viewable url=http://localhost:64115
+2024/08/30 18:16:22 DEBUG Tile data is nil path=/tiles/2023/12/654/2511.png layer=2023
+2024/08/30 18:16:22 DEBUG Tile data is nil path=/tiles/2023/12/655/2511.png layer=2023
+2024/08/30 18:16:22 DEBUG Tile data is nil path=/tiles/2023/12/656/2511.png layer=2023
+2024/08/30 18:16:22 DEBUG Serve tile path=/tiles/2023/12/655/2510.png layer=2023 "content type"=image/png length=49883
+2024/08/30 18:16:22 DEBUG Tile data is nil path=/tiles/2023/12/654/2510.png layer=2023
+2024/08/30 18:16:22 DEBUG Tile data is nil path=/tiles/2023/12/656/2510.png layer=2023
+2024/08/30 18:16:22 DEBUG Tile data is nil path=/tiles/2023/12/655/2512.png layer=2023
+... and so on
+```
+
+See [`sfomuseum/go-mbtiles-show` for detailed examples](https://github.com/sfomuseum/go-mbtiles-show?tab=readme-ov-file#examples).
+
 #### pmtiles
 
 ```
 $> ./bin/show pmtiles -h
 Command-line tool for serving PMTiles tiles from an on-demand web server.
 Usage:
-	 ./bin/show [options]
+	 ./bin/show pmtiles [options]
 Valid options are:
   -browser-uri string
     	A valid sfomuseum/go-www-show/v2.Browser URI. Valid options are: web:// (default "web://")
@@ -154,6 +211,20 @@ Valid options are:
   -verbose
     	Enable verbose (debug) logging.
 ```
+
+##### Example
+
+![](docs/images/go-pmtiles-show-raster.png)
+
+```
+$> ./bin/show pmtiles \
+	-initial-view -122.408061,37.601617,-122.354907,37.640167 \
+	-raster test=fixtures/1930-raster.pmtiles
+	
+2025/03/12 14:36:38 INFO Server is ready and features are viewable url=http://localhost:52722
+```
+
+See [`sfomuseum/go-pmtiles-show` for detailed examples](https://github.com/sfomuseum/go-pmtiles-show?tab=readme-ov-file#examples).
 
 ## See also
 
