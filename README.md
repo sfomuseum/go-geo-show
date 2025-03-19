@@ -8,7 +8,7 @@ _This basically "just works" but if you're reading this that means things are st
 
 This package exports a single command-line tool called `show` which wraps a variety of standalone tools for displaying different geo formats in a web browser.
 
-Each one of those tools can be run independently of one another, by design, and this tool bundles them all in to a single binary application.
+Each one of those tools can be run independently of one another, by design, and this tool bundles them all in to a single (larger) binary application for the sake of convenience..
 
 ## Tools
 
@@ -81,7 +81,7 @@ $> ./bin/show geojson \
 2024/08/13 13:08:44 Features are viewable at http://localhost:54501
 ```
 
-See [`sfomuseum/go-geojson-show` for detailed examples](https://github.com/sfomuseum/go-geojson-show?tab=readme-ov-file#examples).
+Consult the [sfomuseum/go-geojson-show](https://github.com/sfomuseum/go-geojson-show?tab=readme-ov-file#examples) package for detailed usage examples.
 
 #### geoparquet
 
@@ -125,7 +125,7 @@ $> ./bin/show geoparquet \
 2024/08/21 13:40:52 INFO Server is ready and features are viewable url=http://localhost:60581
 ```
 
-See [`sfomuseum/go-geoparquet-show` for detailed examples](https://github.com/sfomuseum/go-geoparquet-show?tab=readme-ov-file#examples).
+Consult the [sfomuseum/go-geoparquet-show](https://github.com/sfomuseum/go-geoparquet-show?tab=readme-ov-file#examples) package for detailed usage examples.
 
 #### mbtiles
 
@@ -178,7 +178,7 @@ $> ./bin/show geojson \
 ... and so on
 ```
 
-See [`sfomuseum/go-mbtiles-show` for detailed examples](https://github.com/sfomuseum/go-mbtiles-show?tab=readme-ov-file#examples).
+Consult the [sfomuseum/go-mbtiles-show](https://github.com/sfomuseum/go-mbtiles-show?tab=readme-ov-file#examples) for detailed usage examples.
 
 #### pmtiles
 
@@ -224,7 +224,7 @@ $> ./bin/show pmtiles \
 2025/03/12 14:36:38 INFO Server is ready and features are viewable url=http://localhost:52722
 ```
 
-See [`sfomuseum/go-pmtiles-show` for detailed examples](https://github.com/sfomuseum/go-pmtiles-show?tab=readme-ov-file#examples).
+Consult the [sfomuseum/go-pmtiles-show](https://github.com/sfomuseum/go-pmtiles-show?tab=readme-ov-file#examples) package for detailed usage examples.
 
 ## See also
 
